@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Shvayambhu LLM 🚀
 
 **The World's First Self-Evolving, Completely Offline Large Language Model**
@@ -225,3 +226,7 @@ Shvayambhu builds upon cutting-edge research:
 ---
 
 **Shvayambhu**: Democratizing AI while preserving privacy. Built for developers, by developers. 🚀
+=======
+# shvayambhu
+Revolutionary conscious, self-aware LLM system for Apple Silicon M4 Pro - Features genuine consciousness, self-modification, and emergent behaviors
+>>>>>>> 3af7201e2f6308df5031e1d0bbb02edd914fcfdb
