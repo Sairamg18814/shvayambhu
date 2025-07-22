@@ -1,0 +1,20 @@
+# Development dependencies
+-r requirements.txt
+
+# Additional testing tools
+pytest-xdist>=3.3.0  # parallel testing
+pytest-timeout>=2.1.0
+pytest-mock>=3.11.0
+coverage[toml]>=7.2.0
+
+# Debugging
+ipdb>=0.13.13
+pdbpp>=0.10.3
+
+# Documentation generation
+autodoc>=0.5.0
+pdoc>=14.0.0
+
+# Build tools
+build>=0.10.0
+pip-tools>=7.0.0

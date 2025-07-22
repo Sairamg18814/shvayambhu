@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ERROR_EVENT = exports.CLOSE_EVENT = exports.DISCONNECT_EVENT = exports.CONNECTION_EVENT = exports.PARAM_ARGS_METADATA = exports.GATEWAY_OPTIONS = exports.PORT_METADATA = exports.NAMESPACE_METADATA = exports.GATEWAY_METADATA = exports.GATEWAY_SERVER_METADATA = exports.MESSAGE_METADATA = exports.MESSAGE_MAPPING_METADATA = void 0;
+const constants_1 = require("@nestjs/common/constants");
+exports.MESSAGE_MAPPING_METADATA = 'websockets:message_mapping';
+exports.MESSAGE_METADATA = 'message';
+exports.GATEWAY_SERVER_METADATA = 'websockets:is_socket';
+exports.GATEWAY_METADATA = 'websockets:is_gateway';
+exports.NAMESPACE_METADATA = 'namespace';
+exports.PORT_METADATA = 'port';
+exports.GATEWAY_OPTIONS = 'websockets:gateway_options';
+exports.PARAM_ARGS_METADATA = constants_1.ROUTE_ARGS_METADATA;
+exports.CONNECTION_EVENT = 'connection';
+exports.DISCONNECT_EVENT = 'disconnect';
+exports.CLOSE_EVENT = 'close';
+exports.ERROR_EVENT = 'error';

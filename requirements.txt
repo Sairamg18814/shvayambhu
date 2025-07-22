@@ -1,0 +1,92 @@
+# Core ML/DL libraries
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Apple Silicon optimization
+# mlx  # Install separately: pip install mlx
+psutil>=5.9.0
+requests>=2.31.0
+
+# Quantization and optimization
+onnx>=1.14.0
+onnxruntime>=1.15.0
+numba>=0.57.0
+
+# Data processing
+datasets>=2.14.0
+huggingface-hub>=0.16.0
+apache-beam>=2.48.0
+dask>=2023.7.0
+pyarrow>=12.0.0
+
+# Text processing
+ftfy>=6.1.0
+langdetect>=1.0.9
+regex>=2023.6.0
+
+# Quality and safety
+cleantext>=1.1.4
+detoxify>=0.5.1
+
+# Testing and quality
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-benchmark>=4.0.0
+hypothesis>=6.82.0
+tox>=4.6.0
+
+# Code quality
+black==23.7.0
+isort>=5.12.0
+flake8>=6.0.0
+mypy>=1.4.0
+pylint>=2.17.0
+pre-commit>=3.3.0
+
+# Documentation
+sphinx>=7.0.0
+sphinx-rtd-theme>=1.3.0
+mkdocs>=1.5.0
+mkdocs-material>=9.1.0
+
+# Development tools
+ipython>=8.14.0
+jupyter>=1.0.0
+notebook>=7.0.0
+tensorboard>=2.13.0
+
+# Performance profiling
+py-spy>=0.3.14
+memory-profiler>=0.61.0
+line-profiler>=4.0.0
+
+# Evaluation and benchmarking
+evaluate>=0.4.0
+sacrebleu>=2.3.0
+
+# Model optimization
+coremltools>=7.0
+onnx-simplifier>=0.4.0
+
+# Packaging and distribution
+setuptools>=68.0.0
+wheel>=0.41.0
+twine>=4.0.0
+
+# Utilities
+tqdm>=4.65.0
+rich>=13.4.0
+click>=8.1.0
+pyyaml>=6.0
+toml>=0.10.0
+python-dotenv>=1.0.0
+
+# Type stubs
+types-PyYAML>=6.0.0
+types-requests>=2.31.0
+types-toml>=0.10.0

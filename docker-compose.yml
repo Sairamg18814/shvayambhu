@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  shvayambhu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shvayambhu-dev
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./checkpoints:/app/checkpoints
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - TOKENIZERS_PARALLELISM=false
+    ports:
+      - "8000:8000"  # For API server
+      - "8888:8888"  # For Jupyter notebooks
+    command: tail -f /dev/null  # Keep container running
+    
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shvayambhu-jupyter
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./notebooks:/app/notebooks
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8888:8888"
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --notebook-dir=/app
+    depends_on:
+      - shvayambhu
+
+networks:
+  default:
+    name: shvayambhu-network

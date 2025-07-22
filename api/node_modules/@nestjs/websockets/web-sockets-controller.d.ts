@@ -1,0 +1,33 @@
+import { NestApplicationContextOptions } from '@nestjs/common/interfaces/nest-application-context-options.interface';
+import { Type } from '@nestjs/common/interfaces/type.interface';
+import { ApplicationConfig } from '@nestjs/core/application-config';
+import { GraphInspector } from '@nestjs/core/inspector/graph-inspector';
+import { Observable, Subject } from 'rxjs';
+import { WsContextCreator } from './context/ws-context-creator';
+import { MessageMappingProperties } from './gateway-metadata-explorer';
+import { GatewayMetadata } from './interfaces/gateway-metadata.interface';
+import { NestGateway } from './interfaces/nest-gateway.interface';
+import { ServerAndEventStreamsHost } from './interfaces/server-and-event-streams-host.interface';
+import { SocketServerProvider } from './socket-server-provider';
+export declare class WebSocketsController {
+    private readonly socketServerProvider;
+    private readonly config;
+    private readonly contextCreator;
+    private readonly graphInspector;
+    private readonly appOptions;
+    private readonly logger;
+    private readonly metadataExplorer;
+    constructor(socketServerProvider: SocketServerProvider, config: ApplicationConfig, contextCreator: WsContextCreator, graphInspector: GraphInspector, appOptions?: NestApplicationContextOptions);
+    connectGatewayToServer(instance: NestGateway, metatype: Type<unknown> | Function, moduleKey: string, instanceWrapperId: string): void;
+    subscribeToServerEvents<T extends GatewayMetadata>(instance: NestGateway, options: T, port: number, moduleKey: string, instanceWrapperId: string): void;
+    subscribeEvents(instance: NestGateway, subscribersMap: MessageMappingProperties[], observableServer: ServerAndEventStreamsHost): void;
+    getConnectionHandler(context: WebSocketsController, instance: NestGateway, subscribersMap: MessageMappingProperties[], disconnect: Subject<any>, connection: Subject<any>): (...args: unknown[]) => void;
+    subscribeInitEvent(instance: NestGateway, event: Subject<any>): void;
+    subscribeConnectionEvent(instance: NestGateway, event: Subject<any>): void;
+    subscribeDisconnectEvent(instance: NestGateway, event: Subject<any>): void;
+    subscribeMessages<T = any>(subscribersMap: MessageMappingProperties[], client: T, instance: NestGateway): void;
+    pickResult(deferredResult: Promise<any>): Promise<Observable<any>>;
+    inspectEntrypointDefinitions(instance: NestGateway, port: number, messageHandlers: MessageMappingProperties[], instanceWrapperId: string): void;
+    private assignServerToProperties;
+    private printSubscriptionLogs;
+}
